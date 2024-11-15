@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f9d3a49b88e31b28afe60edda517efe1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 20px; right: 20px; width: 150px; height: 170px;
+                background-color: white; border: 1px solid grey; z-index: 9999; font-size: 12px; padding: 8px;"
+        <p><i class="fa fa-circle" style="color: darkred;"></i> Calzada</p>
+        <p><i class="fa fa-circle" style="color: orange;"></i> Ciclorrutas</p>
+        <p><i class="fa fa-circle" style="color: blue;"></i> Líneas Metro</p>
+        <p><i class="fa fa-circle" style="color: green;"></i> Corredores Verdes</p>
+        <p><i class="fa fa-bicycle" style="color: orange;"></i> Estaciones Encicla</p>
+        <p><i class="fa fa-train" style="color: blue;"></i> Estaciones Metro</p>
+        <p><i class="fa fa-heart" style="color: purple;"></i> Atractivos Turísticos</p>
+    </div>
+    
+            <div class="folium-map" id="map_f9d3a49b88e31b28afe60edda517efe1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f9d3a49b88e31b28afe60edda517efe1 = L.map(
+                "map_f9d3a49b88e31b28afe60edda517efe1",
+                {
+                    center: [6.2518, -75.5636],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6fd74dc8c82ecbc605f5846b1038a2cf = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_6fd74dc8c82ecbc605f5846b1038a2cf.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+
+        function geo_json_869ade17765ead08c88491aaf1ae9a70_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_869ade17765ead08c88491aaf1ae9a70 = L.geoJson(null, {
+                onEachFeature: geo_json_869ade17765ead08c88491aaf1ae9a70_onEachFeature,
+            
+                style: {"color": "red", "opacity": 1, "weight": 5},
+        });
+
+        function geo_json_869ade17765ead08c88491aaf1ae9a70_add (data) {
+            geo_json_869ade17765ead08c88491aaf1ae9a70
+                .addData(data);
+        }
+            geo_json_869ade17765ead08c88491aaf1ae9a70_add({"bbox": [-75.5820427125427, 6.23101053726585, -75.5744923274463, 6.24262329742902], "features": [{"bbox": [-75.5820427125427, 6.23101053726585, -75.5744923274463, 6.24262329742902], "geometry": {"coordinates": [[-75.5817870476234, 6.23655941558424], [-75.5818036114082, 6.23651409114589], [-75.5818255080622, 6.23647109216428], [-75.5819842089916, 6.23602713845039], [-75.5820091757363, 6.2359668302128], [-75.5820273810135, 6.23590414528831], [-75.5820386051032, 6.23583984023135], [-75.5820427125427, 6.23577469114973], [-75.5820396537614, 6.23570948433763], [-75.5820243520854, 6.23560806521622], [-75.581978450201, 6.2353439945504], [-75.5819344606373, 6.23507226834808], [-75.5818809125616, 6.23489813523726], [-75.5818025078862, 6.23480245974097], [-75.5816667371469, 6.23469339079464], [-75.5814908092716, 6.23459389060884], [-75.5813684248897, 6.2345269190211], [-75.5813129689536, 6.23446568692886], [-75.5811140909025, 6.23424563265214], [-75.5809285997645, 6.23405619435236], [-75.5807201618239, 6.23385527618245], [-75.5805614446306, 6.23376534270046], [-75.5804620079898, 6.23372707461946], [-75.5802268038213, 6.23366967451934], [-75.5801834429144, 6.23366016156981], [-75.5801421758592, 6.23364379254368], [-75.5801040774773, 6.23362099378087], [-75.5800701400607, 6.23359235908706], [-75.5800412475263, 6.23355863426773], [-75.5800181523939, 6.23352069770318], [-75.5800014561869, 6.23347953747054], [-75.5799915937646, 6.23343622560883], [-75.579939209328, 6.23317208895579], [-75.5799175372307, 6.23306827513426], [-75.5779996502891, 6.23262482337912], [-75.5779211880543, 6.23260723256675], [-75.5779194494295, 6.23255158308713], [-75.5779058216279, 6.23211547653247], [-75.5779024574009, 6.23200782359225], [-75.5778995398099, 6.23191446724164], [-75.5777259568231, 6.23191895647134], [-75.5776003348578, 6.23192820339444], [-75.5775935448718, 6.23192870259199], [-75.576516964426, 6.23160571953032], [-75.575871641948, 6.23142067311186], [-75.5757819666501, 6.23139089746806], [-75.5756391265323, 6.2313434704716], [-75.5755125117878, 6.23130593428917], [-75.5755057949335, 6.23130394280865], [-75.5751283177553, 6.23119259788615], [-75.5749727623615, 6.23114671326027], [-75.5745846686147, 6.23103611399054], [-75.5745038261143, 6.23101053726585], [-75.5744923274463, 6.2313506788638], [-75.5744997776983, 6.23188972403669], [-75.5745516066785, 6.23241585137373], [-75.5746248628644, 6.23299540749358], [-75.5746508047073, 6.23326637795191], [-75.5747213633947, 6.23354698291319], [-75.5748122181311, 6.23387490982848], [-75.5748650324266, 6.23402332262667], [-75.5749132093027, 6.23415870547703], [-75.5750893694678, 6.23461624033165], [-75.5751390407338, 6.23480003756621], [-75.5755434630275, 6.23608037539362], [-75.5758764856043, 6.23721749255114], [-75.5760202097875, 6.23764167114419], [-75.5757877350234, 6.23839781646205], [-75.5757297802363, 6.23858868007731], [-75.5756189239096, 6.23899777992373], [-75.5755381127502, 6.23937928852817], [-75.5754545083318, 6.23986245094288], [-75.5754279811289, 6.24008351177956], [-75.5753778649655, 6.24072667809407], [-75.5753671007038, 6.24104482875108], [-75.5753479801967, 6.24161188453001], [-75.5753533824017, 6.24209944334577], [-75.575366289999, 6.24248273102946], [-75.5757811812801, 6.24262329742902], [-75.5763691979747, 6.24260606286469]], "type": "LineString"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_869ade17765ead08c88491aaf1ae9a70.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_869ade17765ead08c88491aaf1ae9a70.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+
+        function geo_json_2511b7964433428aeb0c1d33ea3f7ffb_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_2511b7964433428aeb0c1d33ea3f7ffb = L.geoJson(null, {
+                onEachFeature: geo_json_2511b7964433428aeb0c1d33ea3f7ffb_onEachFeature,
+            
+                style: {"color": "blue", "dashArray": [5, 5], "opacity": 1, "weight": 3},
+        });
+
+        function geo_json_2511b7964433428aeb0c1d33ea3f7ffb_add (data) {
+            geo_json_2511b7964433428aeb0c1d33ea3f7ffb
+                .addData(data);
+        }
+            geo_json_2511b7964433428aeb0c1d33ea3f7ffb_add({"bbox": [-75.57641602, 6.24260606286469, -75.5763691979747, 6.24310303], "features": [{"bbox": [-75.57641602, 6.24260606286469, -75.5763691979747, 6.24310303], "geometry": {"coordinates": [[-75.5763691979747, 6.24260606286469], [-75.57641602, 6.24310303]], "type": "LineString"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_2511b7964433428aeb0c1d33ea3f7ffb.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_2511b7964433428aeb0c1d33ea3f7ffb.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var feature_group_38443a9287bb3a9c85bc434ad78c2d7f = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_a6fe6fc1a69e1a336aed817e44d9e946 = L.marker(
+                [6.23608398, -75.5802002],
+                {}
+            ).addTo(feature_group_38443a9287bb3a9c85bc434ad78c2d7f);
+        
+    
+            var icon_6d44345faa6588ff81631ade09eb6e21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_a6fe6fc1a69e1a336aed817e44d9e946.setIcon(icon_6d44345faa6588ff81631ade09eb6e21);
+        
+    
+        var popup_2ef2f1f9ee7a4fc0f2306541985d3e3a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c4dfbe40df3fb1ec89bb0b73f6530d4 = $(`<div id="html_8c4dfbe40df3fb1ec89bb0b73f6530d4" style="width: 100.0%; height: 100.0%;">Pueblito Paisa</div>`)[0];
+                popup_2ef2f1f9ee7a4fc0f2306541985d3e3a.setContent(html_8c4dfbe40df3fb1ec89bb0b73f6530d4);
+            
+        
+
+        marker_a6fe6fc1a69e1a336aed817e44d9e946.bindPopup(popup_2ef2f1f9ee7a4fc0f2306541985d3e3a)
+        ;
+
+        
+    
+    
+            marker_a6fe6fc1a69e1a336aed817e44d9e946.bindTooltip(
+                `<div>
+                     Pueblito Paisa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_38443a9287bb3a9c85bc434ad78c2d7f.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var feature_group_8703b8a80b85ee9a784cba21216ef85f = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_f8951318380baab51dea057e2f0eebe8 = L.marker(
+                [6.24310303, -75.57641602],
+                {}
+            ).addTo(feature_group_8703b8a80b85ee9a784cba21216ef85f);
+        
+    
+            var icon_b505223358150167bc3ca649b60eae5e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_f8951318380baab51dea057e2f0eebe8.setIcon(icon_b505223358150167bc3ca649b60eae5e);
+        
+    
+        var popup_a7d60e2a1b8b8e9b3c6689f44eabfcb2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c23671349e83b79020582323adcb4b46 = $(`<div id="html_c23671349e83b79020582323adcb4b46" style="width: 100.0%; height: 100.0%;">Plaza Mayor Medellín Convenciones y Exposiciones</div>`)[0];
+                popup_a7d60e2a1b8b8e9b3c6689f44eabfcb2.setContent(html_c23671349e83b79020582323adcb4b46);
+            
+        
+
+        marker_f8951318380baab51dea057e2f0eebe8.bindPopup(popup_a7d60e2a1b8b8e9b3c6689f44eabfcb2)
+        ;
+
+        
+    
+    
+            marker_f8951318380baab51dea057e2f0eebe8.bindTooltip(
+                `<div>
+                     Plaza Mayor Medellín Convenciones y Exposiciones
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_8703b8a80b85ee9a784cba21216ef85f.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+
+        function geo_json_124a36d6c26e7fe90eb239bfec865a14_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_124a36d6c26e7fe90eb239bfec865a14 = L.geoJson(null, {
+                onEachFeature: geo_json_124a36d6c26e7fe90eb239bfec865a14_onEachFeature,
+            
+                style: {"color": "blue", "dashArray": [5, 5], "opacity": 1, "weight": 3},
+        });
+
+        function geo_json_124a36d6c26e7fe90eb239bfec865a14_add (data) {
+            geo_json_124a36d6c26e7fe90eb239bfec865a14
+                .addData(data);
+        }
+            geo_json_124a36d6c26e7fe90eb239bfec865a14_add({"bbox": [-75.5817870476234, 6.23608398, -75.5802002, 6.23655941558424], "features": [{"bbox": [-75.5817870476234, 6.23608398, -75.5802002, 6.23655941558424], "geometry": {"coordinates": [[-75.5802002, 6.23608398], [-75.5817870476234, 6.23655941558424]], "type": "LineString"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_124a36d6c26e7fe90eb239bfec865a14.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_124a36d6c26e7fe90eb239bfec865a14.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+
+        function geo_json_c5e98c9c2d21a5abb50464689e746a1a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c5e98c9c2d21a5abb50464689e746a1a = L.geoJson(null, {
+                onEachFeature: geo_json_c5e98c9c2d21a5abb50464689e746a1a_onEachFeature,
+            
+                style: {"color": "blue", "dashArray": [5, 5], "opacity": 1, "weight": 3},
+        });
+
+        function geo_json_c5e98c9c2d21a5abb50464689e746a1a_add (data) {
+            geo_json_c5e98c9c2d21a5abb50464689e746a1a
+                .addData(data);
+        }
+            geo_json_c5e98c9c2d21a5abb50464689e746a1a_add({"bbox": [-75.57641602, 6.24260606286469, -75.5763691979747, 6.24310303], "features": [{"bbox": [-75.57641602, 6.24260606286469, -75.5763691979747, 6.24310303], "geometry": {"coordinates": [[-75.57641602, 6.24310303], [-75.5763691979747, 6.24260606286469]], "type": "LineString"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+        geo_json_c5e98c9c2d21a5abb50464689e746a1a.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_c5e98c9c2d21a5abb50464689e746a1a.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var feature_group_1b10957131685e94f56600dfaf0b348a = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_0a18920c4b88a0c5b77a37418698bbd0 = L.marker(
+                [6.23915, -75.58307],
+                {}
+            ).addTo(feature_group_1b10957131685e94f56600dfaf0b348a);
+        
+    
+            var icon_a34d4b87ac28f479fdefa36df5614421 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bicycle", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_0a18920c4b88a0c5b77a37418698bbd0.setIcon(icon_a34d4b87ac28f479fdefa36df5614421);
+        
+    
+        var popup_3ff283849f62527de5823ecc05a4136f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2a4eccc52bfbbc107375bbc3d45a285c = $(`<div id="html_2a4eccc52bfbbc107375bbc3d45a285c" style="width: 100.0%; height: 100.0%;">La 33</div>`)[0];
+                popup_3ff283849f62527de5823ecc05a4136f.setContent(html_2a4eccc52bfbbc107375bbc3d45a285c);
+            
+        
+
+        marker_0a18920c4b88a0c5b77a37418698bbd0.bindPopup(popup_3ff283849f62527de5823ecc05a4136f)
+        ;
+
+        
+    
+    
+            marker_0a18920c4b88a0c5b77a37418698bbd0.bindTooltip(
+                `<div>
+                     La 33
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_1b10957131685e94f56600dfaf0b348a.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var feature_group_e142dfb7101c2613f520a8c643ba03e4 = L.featureGroup(
+                {}
+            );
+        
+    
+            var marker_968883601ab1031a09507cc554f60b93 = L.marker(
+                [6.24262, -75.57563],
+                {}
+            ).addTo(feature_group_e142dfb7101c2613f520a8c643ba03e4);
+        
+    
+            var icon_631808e74934fdfae86319e159845723 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bicycle", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_968883601ab1031a09507cc554f60b93.setIcon(icon_631808e74934fdfae86319e159845723);
+        
+    
+        var popup_49adcfe0e78f167782a15fd25e39ea52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_70f9298d0020b087c19ac95bf0837094 = $(`<div id="html_70f9298d0020b087c19ac95bf0837094" style="width: 100.0%; height: 100.0%;">Plaza Mayor</div>`)[0];
+                popup_49adcfe0e78f167782a15fd25e39ea52.setContent(html_70f9298d0020b087c19ac95bf0837094);
+            
+        
+
+        marker_968883601ab1031a09507cc554f60b93.bindPopup(popup_49adcfe0e78f167782a15fd25e39ea52)
+        ;
+
+        
+    
+    
+            marker_968883601ab1031a09507cc554f60b93.bindTooltip(
+                `<div>
+                     Plaza Mayor
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            feature_group_e142dfb7101c2613f520a8c643ba03e4.addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var marker_5f181ef349a9acfc476e2b1401644263 = L.marker(
+                [6.244506839999999, -75.57348632999998],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_dcf284361b058d48ff5844e276b8d9c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_5f181ef349a9acfc476e2b1401644263.setIcon(icon_dcf284361b058d48ff5844e276b8d9c6);
+        
+    
+        var popup_87e1a4dbcb8626c9f474abe0cc621e27 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4e9e4f59ee47af5716a6da1e87e2abdc = $(`<div id="html_4e9e4f59ee47af5716a6da1e87e2abdc" style="width: 100.0%; height: 100.0%;">Centro Administrativo´José María Córdoba´</div>`)[0];
+                popup_87e1a4dbcb8626c9f474abe0cc621e27.setContent(html_4e9e4f59ee47af5716a6da1e87e2abdc);
+            
+        
+
+        marker_5f181ef349a9acfc476e2b1401644263.bindPopup(popup_87e1a4dbcb8626c9f474abe0cc621e27)
+        ;
+
+        
+    
+    
+            marker_5f181ef349a9acfc476e2b1401644263.bindTooltip(
+                `<div>
+                     Centro Administrativo´José María Córdoba´
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_acff656fc79f80817713093edba2fe37 = L.marker(
+                [6.244689939999999, -75.57189941],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_35bf5ff49beb2249bfd94c318c69d746 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_acff656fc79f80817713093edba2fe37.setIcon(icon_35bf5ff49beb2249bfd94c318c69d746);
+        
+    
+        var popup_6835c6180a89218422744bbc2d1d4ae8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cead223ed4919bba442a51450953dd66 = $(`<div id="html_cead223ed4919bba442a51450953dd66" style="width: 100.0%; height: 100.0%;">Edificio Antigua Estación Medellín</div>`)[0];
+                popup_6835c6180a89218422744bbc2d1d4ae8.setContent(html_cead223ed4919bba442a51450953dd66);
+            
+        
+
+        marker_acff656fc79f80817713093edba2fe37.bindPopup(popup_6835c6180a89218422744bbc2d1d4ae8)
+        ;
+
+        
+    
+    
+            marker_acff656fc79f80817713093edba2fe37.bindTooltip(
+                `<div>
+                     Edificio Antigua Estación Medellín
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7ad743122e0800bc70029f005e191df5 = L.marker(
+                [6.245483400000001, -75.57769775],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_74312ce477ca2e6e410d650337baeffb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_7ad743122e0800bc70029f005e191df5.setIcon(icon_74312ce477ca2e6e410d650337baeffb);
+        
+    
+        var popup_a382cfe0d5c966fd76ccd1fff74366db = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_690e43e8bdb51edcc1e4f409a950158e = $(`<div id="html_690e43e8bdb51edcc1e4f409a950158e" style="width: 100.0%; height: 100.0%;">Edificio Inteligente Empresas Públicas de Medellín</div>`)[0];
+                popup_a382cfe0d5c966fd76ccd1fff74366db.setContent(html_690e43e8bdb51edcc1e4f409a950158e);
+            
+        
+
+        marker_7ad743122e0800bc70029f005e191df5.bindPopup(popup_a382cfe0d5c966fd76ccd1fff74366db)
+        ;
+
+        
+    
+    
+            marker_7ad743122e0800bc70029f005e191df5.bindTooltip(
+                `<div>
+                     Edificio Inteligente Empresas Públicas de Medellín
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_14efd38de7d709a350ab3168fdb54eef = L.marker(
+                [6.2365112300000005, -75.57989501999998],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_da2ccc2e1e76d46f4477957f54ae7434 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_14efd38de7d709a350ab3168fdb54eef.setIcon(icon_da2ccc2e1e76d46f4477957f54ae7434);
+        
+    
+        var popup_a0f6d160a0bab91f71eb3324af2fa2ce = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_11c75ac8fee3906fe8ffa9389dc09e38 = $(`<div id="html_11c75ac8fee3906fe8ffa9389dc09e38" style="width: 100.0%; height: 100.0%;">Escultura Cacique Nutibara</div>`)[0];
+                popup_a0f6d160a0bab91f71eb3324af2fa2ce.setContent(html_11c75ac8fee3906fe8ffa9389dc09e38);
+            
+        
+
+        marker_14efd38de7d709a350ab3168fdb54eef.bindPopup(popup_a0f6d160a0bab91f71eb3324af2fa2ce)
+        ;
+
+        
+    
+    
+            marker_14efd38de7d709a350ab3168fdb54eef.bindTooltip(
+                `<div>
+                     Escultura Cacique Nutibara
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_74c1eee450d3c39576495c0e0751caec = L.marker(
+                [6.24432373, -75.57348632999998],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_ebca0e9b47d968c50484c3b5a0fb77cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_74c1eee450d3c39576495c0e0751caec.setIcon(icon_ebca0e9b47d968c50484c3b5a0fb77cb);
+        
+    
+        var popup_63cf7b61f413d9c07a788ef128b320ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_29c76e91eb53f411988667dde3c9c2d1 = $(`<div id="html_29c76e91eb53f411988667dde3c9c2d1" style="width: 100.0%; height: 100.0%;">Monumento a la Raza</div>`)[0];
+                popup_63cf7b61f413d9c07a788ef128b320ac.setContent(html_29c76e91eb53f411988667dde3c9c2d1);
+            
+        
+
+        marker_74c1eee450d3c39576495c0e0751caec.bindPopup(popup_63cf7b61f413d9c07a788ef128b320ac)
+        ;
+
+        
+    
+    
+            marker_74c1eee450d3c39576495c0e0751caec.bindTooltip(
+                `<div>
+                     Monumento a la Raza
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_130e09129e3274b9633ca25b76ab8871 = L.marker(
+                [6.245117189999998, -75.57611084],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_3cb7149c8982d78a072f24c3327707ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_130e09129e3274b9633ca25b76ab8871.setIcon(icon_3cb7149c8982d78a072f24c3327707ae);
+        
+    
+        var popup_ebb7a7aed93d0948ff75d5da447f8fca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16ad656ef6be03664840f3cf29864d16 = $(`<div id="html_16ad656ef6be03664840f3cf29864d16" style="width: 100.0%; height: 100.0%;">Museo del Agua</div>`)[0];
+                popup_ebb7a7aed93d0948ff75d5da447f8fca.setContent(html_16ad656ef6be03664840f3cf29864d16);
+            
+        
+
+        marker_130e09129e3274b9633ca25b76ab8871.bindPopup(popup_ebb7a7aed93d0948ff75d5da447f8fca)
+        ;
+
+        
+    
+    
+            marker_130e09129e3274b9633ca25b76ab8871.bindTooltip(
+                `<div>
+                     Museo del Agua
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_da16453aebd80b18eb42d0221957f63b = L.marker(
+                [6.244689939999999, -75.5770874],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_a0092e63b600d54cfb68859a7bd9f94d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_da16453aebd80b18eb42d0221957f63b.setIcon(icon_a0092e63b600d54cfb68859a7bd9f94d);
+        
+    
+        var popup_e3a7ef525e812e45ce965fa9457abd1f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d1a6719fdcc956c0721a93079d63636 = $(`<div id="html_2d1a6719fdcc956c0721a93079d63636" style="width: 100.0%; height: 100.0%;">Parque de los Pies Descalzos</div>`)[0];
+                popup_e3a7ef525e812e45ce965fa9457abd1f.setContent(html_2d1a6719fdcc956c0721a93079d63636);
+            
+        
+
+        marker_da16453aebd80b18eb42d0221957f63b.bindPopup(popup_e3a7ef525e812e45ce965fa9457abd1f)
+        ;
+
+        
+    
+    
+            marker_da16453aebd80b18eb42d0221957f63b.bindTooltip(
+                `<div>
+                     Parque de los Pies Descalzos
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b309250314d65150b6adb3345ce632ea = L.marker(
+                [6.2365112300000005, -75.57989501999998],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_96ce521ef6dae954ecb5eaaf815428a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_b309250314d65150b6adb3345ce632ea.setIcon(icon_96ce521ef6dae954ecb5eaaf815428a3);
+        
+    
+        var popup_1565cfe197176f4bc2593b226975ed6e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9353f3ae56a2bdbdea1548c504d2ca29 = $(`<div id="html_9353f3ae56a2bdbdea1548c504d2ca29" style="width: 100.0%; height: 100.0%;">Parque Natural Metropolitano Cerro Nutibara</div>`)[0];
+                popup_1565cfe197176f4bc2593b226975ed6e.setContent(html_9353f3ae56a2bdbdea1548c504d2ca29);
+            
+        
+
+        marker_b309250314d65150b6adb3345ce632ea.bindPopup(popup_1565cfe197176f4bc2593b226975ed6e)
+        ;
+
+        
+    
+    
+            marker_b309250314d65150b6adb3345ce632ea.bindTooltip(
+                `<div>
+                     Parque Natural Metropolitano Cerro Nutibara
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7b505ae1cb64797b6bc75b895eb9bc46 = L.marker(
+                [6.24310303, -75.57641601999998],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_8d5fc152101917c3159c931af807f52f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_7b505ae1cb64797b6bc75b895eb9bc46.setIcon(icon_8d5fc152101917c3159c931af807f52f);
+        
+    
+        var popup_7c24a870bc7bbe46e84e8bb2bbcf644d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_502057ec393744c269000c0e52f96f86 = $(`<div id="html_502057ec393744c269000c0e52f96f86" style="width: 100.0%; height: 100.0%;">Plaza Mayor Medellín Convenciones y Exposiciones</div>`)[0];
+                popup_7c24a870bc7bbe46e84e8bb2bbcf644d.setContent(html_502057ec393744c269000c0e52f96f86);
+            
+        
+
+        marker_7b505ae1cb64797b6bc75b895eb9bc46.bindPopup(popup_7c24a870bc7bbe46e84e8bb2bbcf644d)
+        ;
+
+        
+    
+    
+            marker_7b505ae1cb64797b6bc75b895eb9bc46.bindTooltip(
+                `<div>
+                     Plaza Mayor Medellín Convenciones y Exposiciones
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a75c34c0e81f1c3fcf36bb930689b92 = L.marker(
+                [6.236083979999998, -75.5802002],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_6b2f799512edd3ec88b3369a64332cd7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_9a75c34c0e81f1c3fcf36bb930689b92.setIcon(icon_6b2f799512edd3ec88b3369a64332cd7);
+        
+    
+        var popup_ae460347e2eb42e9ef98a44662707d1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bede0ac0e65dbc1548ab070f90aa252f = $(`<div id="html_bede0ac0e65dbc1548ab070f90aa252f" style="width: 100.0%; height: 100.0%;">Pueblito Paisa</div>`)[0];
+                popup_ae460347e2eb42e9ef98a44662707d1b.setContent(html_bede0ac0e65dbc1548ab070f90aa252f);
+            
+        
+
+        marker_9a75c34c0e81f1c3fcf36bb930689b92.bindPopup(popup_ae460347e2eb42e9ef98a44662707d1b)
+        ;
+
+        
+    
+    
+            marker_9a75c34c0e81f1c3fcf36bb930689b92.bindTooltip(
+                `<div>
+                     Pueblito Paisa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1a8ba9d3641512a88568ddcf772a39fb = L.marker(
+                [6.233886719999999, -75.57568359],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_d582774a3b18f0670eb5674ace936bd2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_1a8ba9d3641512a88568ddcf772a39fb.setIcon(icon_d582774a3b18f0670eb5674ace936bd2);
+        
+    
+        var popup_ce4976f62c4b3b02ddb082a3dbf0fa5d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e59a31cb98226b01e5ce515257989abf = $(`<div id="html_e59a31cb98226b01e5ce515257989abf" style="width: 100.0%; height: 100.0%;">Puente de Guayaquil</div>`)[0];
+                popup_ce4976f62c4b3b02ddb082a3dbf0fa5d.setContent(html_e59a31cb98226b01e5ce515257989abf);
+            
+        
+
+        marker_1a8ba9d3641512a88568ddcf772a39fb.bindPopup(popup_ce4976f62c4b3b02ddb082a3dbf0fa5d)
+        ;
+
+        
+    
+    
+            marker_1a8ba9d3641512a88568ddcf772a39fb.bindTooltip(
+                `<div>
+                     Puente de Guayaquil
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b0411459f8c4ed80003c7d6aa962bb9e = L.marker(
+                [6.24310303, -75.57757567999998],
+                {}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+        
+    
+            var icon_e868974226a403105745a9fcd2af32a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "heart", "iconColor": "white", "markerColor": "purple", "prefix": "fa"}
+            );
+            marker_b0411459f8c4ed80003c7d6aa962bb9e.setIcon(icon_e868974226a403105745a9fcd2af32a3);
+        
+    
+        var popup_592d76fe7c9beb20d08677c84a30083a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a586dbae2eaee7036efec5dbe5f6602 = $(`<div id="html_9a586dbae2eaee7036efec5dbe5f6602" style="width: 100.0%; height: 100.0%;">Teatro Metropolitano de Medellín José Gutiérrez Gómez</div>`)[0];
+                popup_592d76fe7c9beb20d08677c84a30083a.setContent(html_9a586dbae2eaee7036efec5dbe5f6602);
+            
+        
+
+        marker_b0411459f8c4ed80003c7d6aa962bb9e.bindPopup(popup_592d76fe7c9beb20d08677c84a30083a)
+        ;
+
+        
+    
+    
+            marker_b0411459f8c4ed80003c7d6aa962bb9e.bindTooltip(
+                `<div>
+                     Teatro Metropolitano de Medellín José Gutiérrez Gómez
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_bdbea5958d0aa0cae8d4f330e2b32700_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_6fd74dc8c82ecbc605f5846b1038a2cf,
+                },
+                overlays :  {
+                    "shortest_path" : geo_json_869ade17765ead08c88491aaf1ae9a70,
+                    "dashed_line" : geo_json_2511b7964433428aeb0c1d33ea3f7ffb,
+                    "start_attraction" : feature_group_38443a9287bb3a9c85bc434ad78c2d7f,
+                    "end_attraction" : feature_group_8703b8a80b85ee9a784cba21216ef85f,
+                    "start_dashed_line" : geo_json_124a36d6c26e7fe90eb239bfec865a14,
+                    "end_dashed_line" : geo_json_c5e98c9c2d21a5abb50464689e746a1a,
+                    "start_station" : feature_group_1b10957131685e94f56600dfaf0b348a,
+                    "end_station" : feature_group_e142dfb7101c2613f520a8c643ba03e4,
+                },
+            };
+            let layer_control_bdbea5958d0aa0cae8d4f330e2b32700 = L.control.layers(
+                layer_control_bdbea5958d0aa0cae8d4f330e2b32700_layers.base_layers,
+                layer_control_bdbea5958d0aa0cae8d4f330e2b32700_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_f9d3a49b88e31b28afe60edda517efe1);
+
+        
+</script>
+</html>
